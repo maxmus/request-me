@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>RequestMe</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form class="form" [formGroup]="loginForm" (ngSubmit)="tryLogin(loginForm.value)">
+    <ion-item>
+      <ion-input expand="full" name="email" type="text" formControlName="email" placeholder="your@email.com" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input expand="full" name="password" type="password" placeholder="Password" formControlName="password" class="form-controll" required></ion-input>
+    </ion-item>
+    
+    <ion-button type="submit" expand="full">Login</ion-button>
+      
+    <label class="error-message">{{errorMessage}}</label>
+
+    <ion-button expand="full" color="danger" (click)="goRegisterPage()">Register</ion-button>
+    
+    <br>
+  </form>
+</ion-content>
